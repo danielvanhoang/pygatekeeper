@@ -9,5 +9,4 @@ ENV FLASK_APP='/app/app.py'
 COPY app.py app.py
 COPY templates templates
 COPY helpers.py helpers.py
-ENTRYPOINT [ "flask" ]
-CMD [ "run" ]
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
