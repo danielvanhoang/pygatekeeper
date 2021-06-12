@@ -8,7 +8,7 @@ steps:
 - name: build
   image: python:3.8-slim-buster
   commands:
-    - "pip3 install -r requirements.txt"
+    - "pip install -r requirements.txt"
     - "apt update"
 
 - name: publish
@@ -20,4 +20,4 @@ steps:
       from_secret: docker_password
     repo: dhpup/pygatekeeper
     auto_tag: true
-    auto_tag_suffix: 1.0.12
+    auto_tag_suffix: 1.0.14
