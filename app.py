@@ -30,7 +30,7 @@ if not honeycomb_write_key:
         "Got empty writekey from the environment. Please set HONEYCOMB_WRITEKEY")
 
 beeline.init(writekey=honeycomb_write_key,
-             dataset='apiary-python', service_name='sample_app')
+             dataset='pygate', service_name='pygate')
 
 app = Flask(__name__)
 HoneyMiddleware(app, db_events=False)
