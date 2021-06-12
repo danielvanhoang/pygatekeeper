@@ -9,8 +9,8 @@ steps:
   image: python:3.10.0b1-slim-buster
   commands:
     - "pip3 install -r requirements.txt"
-    - "pip install honeycomb-beeline"
-    - "pip install -U setuptools"
+    - "pip3 install honeycomb-beeline"
+    - "pip3 install -U setuptools"
     - "apt update"
 
 - name: publish
