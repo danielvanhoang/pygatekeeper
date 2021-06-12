@@ -1,0 +1,25 @@
+#Drone CI File!!!
+
+kind: pipeline
+name: default
+
+steps:
+
+- name: build
+  image: python:3.10.0b1-slim-buster
+  commands:
+    - "pip3 install -r requirements.txt"
+    - "pip install honeycomb-beeline"
+    - "pip install -U setuptools"
+    - "apt update"
+
+- name: publish
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: dhpup/pygatekeeper
+    auto_tag: true
+    auto_tag_suffix: 1.0.12
